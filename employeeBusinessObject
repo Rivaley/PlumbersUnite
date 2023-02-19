@@ -1,0 +1,141 @@
+package com.example.plumbersunite;
+
+import java.sql.*;
+
+public class employeeBusinessObject {
+    private String id;
+    private String fname;
+    private String lname;
+    private int phone;
+    private String email;
+    private int deptId;
+    private String scheduleId;
+    public employeeBusinessObject() {
+        id="";
+        fname="";
+        lname="";
+        phone=0;
+        email="";
+        deptId=0;
+        scheduleId="";
+    }
+    public employeeBusinessObject(String Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
+        id=Eid;
+        fname=Efn;
+        lname=Eln;
+        phone=Eph;
+        email=Eem;
+        deptId=Did;
+        scheduleId=Sid;
+    }
+    public void selectDB(String i) {
+        id=i;
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Select * from Employees where employee_id = '"+getid()+"'";
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println(sql);
+            rs.next();
+            fname = rs.getString(2);
+            lname = rs.getString(3);
+            phone = rs.getString(4);
+            email = rs.getString(5);
+            deptId = rs.getString(6);
+            scheduleId = rs.getString(7);
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void insertDB(String Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
+        id=Eid;
+        fname=Efn;
+        lname=Eln;
+        phone=Eph;
+        email=Eem;
+        deptId=Did;
+        scheduleId=Sid;
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Insert into Employees values('"+getid()+"','"+getfname()+"','"+getlname()+"','"+getphone()+"','"+getemail()+"','"+getdeptId()+"','"+getscheduleId()+"')";
+            System.out.println(sql);
+            int n1 = stmt.executeUpdate(sql);
+            if (n1==1)
+                System.out.println("INSERT SUCCESSFUL!");
+            else
+                System.out.println("INSERT FAILED");
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void deleteDB() {
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Delete from Employees where employee_id='"+getid()+"'";
+            System.out.println(sql);
+            int n = stmt.executeUpdate(sql);
+            if (n==1)
+                System.out.println("DELETE SUCCESSFUL!");
+            else
+                System.out.println("DELETE FAILED");
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void updateDB() {
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Update Employees set employee_fname='"+getfname()+"',"+" employee_lname='"+getlname()+"',"+" employee_phone='"+getphone()+"',"+" employee_email='"+getemail()+"',"+" dept_id='"+getdeptId()+"',"+" schedule_id='"+getscheduleId()+" where employee_id='"+getid()+"'";
+            System.out.println(sql);
+            int n =stmt.executeUpdate(sql);
+            if (n==1)
+                System.out.println("UPDATE SUCCESSFUL!");
+            else
+                System.out.println("UPDATE FAILED");
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public String getid() {return id;}
+    public void setid(String Eid) {id=Eid;}
+    
+    public String getfname() {return fname;}
+    public void setfname(String Efn) {fname=Efn;}
+    
+    public String getlname() {return lname;}
+    public void setlname(String Eln) {lname=Eln;}
+    
+    public int getphone() {return phone;}
+    public void setphone(int Eph) {phone=Eph;}
+    
+    public String getemail() {return email;}
+    public void setemail(String Eem) {email=Eem;}
+    
+    public int getdeptId() {return deptId;}
+    public void setdeptId(int Did) (deptId=Did;}
+    
+    public String getscheduleId() {return scheduleId;}
+    public void setscheduleId(int Sid) (scheduleId=Sid;}
+    
+    public void display() {
+        System.out.println("Id: " + id);
+        System.out.println("Fname: " + fname);
+        System.out.println("Lname: " + lname);
+        System.out.println("Phone: " + phone);
+        System.out.println("Email: " + email);
+        System.out.println("DeptId: " + deptId);
+        System.out.println("ScheduleId: " + scheduleId);
+    }
+}
