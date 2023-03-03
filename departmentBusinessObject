@@ -1,0 +1,96 @@
+package com.example.plumbersunite;
+
+import java.sql.*;
+
+public class departmentBusinessObject {
+    private int id;
+    private String name;
+    public departmentBusinessObject() {
+        id=0;
+        name="";
+    }
+    public employeeBusinessObject(int d, String n) {
+        id=d;
+        name=n;
+    }
+    public void selectDB(String i) {
+        id=i;
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert department database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Select * from department where dept_id = '"+getid()+"'";
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println(sql);
+            rs.next();
+            name = rs.getString(2);
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void insertDB(int d, String n) {
+        id=d;
+        name=n;
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert department database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Insert into department values('"+getid()+"','"+getname()+"')";
+            System.out.println(sql);
+            int n1 = stmt.executeUpdate(sql);
+            if (n1==1)
+                System.out.println("INSERT SUCCESSFUL!");
+            else
+                System.out.println("INSERT FAILED");
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void deleteDB() {
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert department database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Delete from department where dept_id='"+getid()+"'";
+            System.out.println(sql);
+            int n = stmt.executeUpdate(sql);
+            if (n==1)
+                System.out.println("DELETE SUCCESSFUL!");
+            else
+                System.out.println("DELETE FAILED");
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void updateDB() {
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert department database link in here!)");
+            Statement stmt = c1.createStatement();
+            String sql = "Update department set dept_name='"+getname()+" where dept_id='"+getid()+"'";
+            System.out.println(sql);
+            int n =stmt.executeUpdate(sql);
+            if (n==1)
+                System.out.println("UPDATE SUCCESSFUL!");
+            else
+                System.out.println("UPDATE FAILED");
+            c1.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public String getid() {return id;}
+    public void setid(int d) {id=d;}
+    
+    public String getname() {return name;}
+    public void setname(String n) {name=n;}
+    
+    public void display() {
+        System.out.println("Id: " + id);
+        System.out.println("Name: " + name);
+    }
+}
