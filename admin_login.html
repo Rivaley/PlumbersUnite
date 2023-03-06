@@ -7,6 +7,40 @@
     <title>Admin Login</title>
   </head>
   <body>
+
+<!-- Nav Bar -->
+<nav class = "navbar navbar-expand-lg bg-light navbar-light"> 
+  <div class = "container">
+  <a href="#" class="navbar-brand">Plumbers Unite Admin</a>
+
+  <button class="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> 
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+  <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+          <a href="#" class="nav-link">Schedule</a>
+          </li>
+
+          <li class="nav-item">
+              <a href="#" class="nav-link">Techs</a>
+              </li>
+
+          <li class="nav-item">
+              <a href="#" class="nav-link">Jobs</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">My Account</a>
+                  </li>
+      </ul>
+  </div>
+</div>
+</nav>
+
+
     <div id=admin_login>
       <h1>Login to your account </h1>
       <form method="post" action="">
@@ -17,7 +51,7 @@
       <input type="text" id="admin_password" name="admin_password">
       <br>
 
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" id="admin_login">
       </form>
 
 
