@@ -3,7 +3,7 @@ package com.example.plumbersunite;
 import java.sql.*;
 
 public class employeeBusinessObject {
-    private String id;
+    private int id;
     private String fname;
     private String lname;
     private int phone;
@@ -11,7 +11,7 @@ public class employeeBusinessObject {
     private int deptId;
     private String scheduleId;
     public employeeBusinessObject() {
-        id="";
+        id=0;
         fname="";
         lname="";
         phone=0;
@@ -19,7 +19,7 @@ public class employeeBusinessObject {
         deptId=0;
         scheduleId="";
     }
-    public employeeBusinessObject(String Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
+    public employeeBusinessObject(int Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
         id=Eid;
         fname=Efn;
         lname=Eln;
@@ -28,7 +28,7 @@ public class employeeBusinessObject {
         deptId=Did;
         scheduleId=Sid;
     }
-    public void selectDB(String i) {
+    public void selectDB(int i) {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -40,16 +40,16 @@ public class employeeBusinessObject {
             rs.next();
             fname = rs.getString(2);
             lname = rs.getString(3);
-            phone = rs.getString(4);
+            phone = rs.getInt(4);
             email = rs.getString(5);
-            deptId = rs.getString(6);
+            deptId = rs.getInt(6);
             scheduleId = rs.getString(7);
             c1.close();
         } catch(Exception e) {
             System.out.println(e);
         }
     }
-    public void insertDB(String Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
+    public void insertDB(int Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
         id=Eid;
         fname=Efn;
         lname=Eln;
@@ -108,8 +108,8 @@ public class employeeBusinessObject {
         }
     }
 
-    public String getid() {return id;}
-    public void setid(String Eid) {id=Eid;}
+    public int getid() {return id;}
+    public void setid(int Eid) {id=Eid;}
     
     public String getfname() {return fname;}
     public void setfname(String Efn) {fname=Efn;}
@@ -124,10 +124,10 @@ public class employeeBusinessObject {
     public void setemail(String Eem) {email=Eem;}
     
     public int getdeptId() {return deptId;}
-    public void setdeptId(int Did) (deptId=Did;}
+    public void setdeptId(int Did) {deptId=Did;}
     
     public String getscheduleId() {return scheduleId;}
-    public void setscheduleId(int Sid) (scheduleId=Sid;}
+    public void setscheduleId(String Sid) {scheduleId=Sid;}
     
     public void display() {
         System.out.println("Id: " + id);
