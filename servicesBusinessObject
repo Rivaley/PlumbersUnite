@@ -84,7 +84,7 @@ public class serviceBusinessObject {
     }
 
     public String getid() {return id;}
-    public void setid(int d) {id=d;}
+    public void setid(String d) {id=d;}
     
     public String getname() {return name;}
     public void setname(String n) {name=n;}
