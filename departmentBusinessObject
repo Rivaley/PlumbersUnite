@@ -9,11 +9,11 @@ public class departmentBusinessObject {
         id=0;
         name="";
     }
-    public employeeBusinessObject(int d, String n) {
+    public departmentBusinessObject(int d, String n) {
         id=d;
         name=n;
     }
-    public void selectDB(String i) {
+    public void selectDB(int i) {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -83,7 +83,7 @@ public class departmentBusinessObject {
         }
     }
 
-    public String getid() {return id;}
+    public int getid() {return id;}
     public void setid(int d) {id=d;}
     
     public String getname() {return name;}
