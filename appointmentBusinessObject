@@ -1,23 +1,26 @@
 package com.example.plumbersunite;
 
 import java.sql.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 public class appointmentBusinessObject {
     private String id;
     private String employeeId;
     private String customerId;
     private String serviceId;
-    private int date;
+    private Timestamp date;
     private String time;
     public appointmentBusinessObject() {
         id="";
         employeeId="";
         customerId="";
         serviceId="";
-        date=0;
+        Date Date = new Date();
+        date=new Timestamp(date.getTime());
         time="";
     }
-    public appointmentBusinessObject(String Aid, String Eid, String Cid, String Sid, int d, String t) {
+    public appointmentBusinessObject(String Aid, String Eid, String Cid, String Sid, Timestamp d, String t) {
         id=Aid;
         employeeId=Eid;
         customerId=Cid;
@@ -38,14 +41,14 @@ public class appointmentBusinessObject {
             employeeId = rs.getString(2);
             customerId = rs.getString(3);
             serviceId = rs.getString(4);
-            date = rs.getString(5);
+            date = rs.getTimestamp(5);
             time = rs.getString(6);
             c1.close();
         } catch(Exception e) {
             System.out.println(e);
         }
     }
-    public void insertDB(String Aid, String Eid, String Cid, String Sid, int d, String t) {
+    public void insertDB(String Aid, String Eid, String Cid, String Sid, Timestamp d, String t) {
         id=Aid;
         employeeId=Eid;
         customerId=Cid;
@@ -115,11 +118,11 @@ public class appointmentBusinessObject {
     public String getserviceId() {return serviceId;}
     public void setserviceId(String Sid) {serviceId=Sid;}
     
-    public int getdate() {return date;}
-    public void setdate(int d) {date=d;}
+    public Timestamp getdate() {return date;}
+    public void setdate(Timestamp d) {date=d;}
     
     public String gettime() {return time;}
-    public void settime(String t) (time=t;}
+    public void settime(String t) {time=t;}
     
     public void display() {
         System.out.println("Id: " + id);
