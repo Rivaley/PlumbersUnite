@@ -6,7 +6,7 @@ public class employeeBusinessObject {
     private int id;
     private String fname;
     private String lname;
-    private int phone;
+    private String phone;
     private String email;
     private int deptId;
     private String scheduleId;
@@ -14,12 +14,12 @@ public class employeeBusinessObject {
         id=0;
         fname="";
         lname="";
-        phone=0;
+        phone="";
         email="";
         deptId=0;
         scheduleId="";
     }
-    public employeeBusinessObject(int Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
+    public employeeBusinessObject(int Eid, String Efn, String Eln, String Eph, String Eem, int Did, String Sid) {
         id=Eid;
         fname=Efn;
         lname=Eln;
@@ -40,7 +40,7 @@ public class employeeBusinessObject {
             rs.next();
             fname = rs.getString(2);
             lname = rs.getString(3);
-            phone = rs.getInt(4);
+            phone = rs.getString(4);
             email = rs.getString(5);
             deptId = rs.getInt(6);
             scheduleId = rs.getString(7);
@@ -49,7 +49,7 @@ public class employeeBusinessObject {
             System.out.println(e);
         }
     }
-    public void insertDB(int Eid, String Efn, String Eln, int Eph, String Eem, int Did, String Sid) {
+    public void insertDB(int Eid, String Efn, String Eln, String Eph, String Eem, int Did, String Sid) {
         id=Eid;
         fname=Efn;
         lname=Eln;
@@ -117,8 +117,8 @@ public class employeeBusinessObject {
     public String getlname() {return lname;}
     public void setlname(String Eln) {lname=Eln;}
     
-    public int getphone() {return phone;}
-    public void setphone(int Eph) {phone=Eph;}
+    public String getphone() {return phone;}
+    public void setphone(String Eph) {phone=Eph;}
     
     public String getemail() {return email;}
     public void setemail(String Eem) {email=Eem;}
