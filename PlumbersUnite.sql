@@ -77,7 +77,7 @@ CREATE TABLE `services` (
 CREATE TABLE `schedule` (
     `schedule_id` int  NOT NULL ,
     `day_of_week` varchar(20)  NOT NULL ,
-    `shift_id` varchar(10)  NOT NULL 
+    `shift_id` int  NOT NULL 
 );
 
 CREATE TABLE `users` (
@@ -192,6 +192,32 @@ VALUES ('201', '8:00', '17:00');
 
 INSERT INTO shift (shift_id, start_time, end_time) 
 VALUES ('202', '11:00', '20:00');
+
+
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('701', 'MTWThF', '201');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('702', 'MTWThF', '202');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('703', 'TWThFS', '201');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('704', 'TWThFS', '202');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('705', 'MWThFS', '201');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('706', 'MWThFS', '202');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('707', 'MTThFS', '201');
+
+INSERT INTO schedule (schedule_id, day_of_week, shift_id) 
+VALUES ('708', 'MTThFS', '202');
 
 
 
