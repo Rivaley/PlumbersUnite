@@ -16,7 +16,6 @@ public class appointmentBusinessObject {
         employeeId="";
         customerId="";
         serviceId="";
-        Date Date = new Date();
         date=new Timestamp(date.getTime());
         time="";
     }
