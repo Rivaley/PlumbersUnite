@@ -7,7 +7,7 @@ CREATE TABLE `employee` (
     `employee_phone` char(10)  NOT NULL ,
     `employee_email` varchar(60)  NOT NULL ,
     `dept_id` int  NOT NULL ,
-    `schedule_id` varchar(10)  NOT NULL ,
+    `schedule_id` int  NOT NULL ,
     PRIMARY KEY (
         `employee_id`
     )
