@@ -27,7 +27,7 @@ CREATE TABLE `customers` (
     `customer_lname` varchar(20)  NOT NULL ,
     `customer_phone` char(10)  NOT NULL ,
     `customer_email` varchar(60)  NOT NULL ,
-    `address_id` varchar(10)  NOT NULL ,
+    `address_id` int  NOT NULL ,
     PRIMARY KEY (
         `customer_id`
     )
