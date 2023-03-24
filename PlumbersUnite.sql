@@ -167,6 +167,57 @@ VALUES ('52B', 'Diagnostics');
 INSERT INTO services (service_id, service_name) 
 VALUES ('73A', 'Re-Piping');
 
+INSERT INTO services (service_id, service_name) 
+VALUES ('24D', 'Water Heater Repair');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('24C', 'Water Heater Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('1A', 'Drain Cleaning');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('12B', 'Toilet Repair');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('12A', 'Toilet Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('13A', 'Garbage Disposal Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('13B', 'Garbage Disposal Repair');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('101C', 'Tub and Shower Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('101A', 'Tub Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('101D', 'Sink Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('101B', 'Shower Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('101E', 'Faucet Installation');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('201A', 'Tub Repair');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('201B', 'Shower Repair');
+
+INSERT INTO services (service_id, service_name) 
+VALUES ('201E', 'Faucet Repair');
+
+INSERT INTO services (service_id, service_name)
+ VALUES ('10A', 'Routine Service');
+ 
+INSERT INTO services (service_id, service_name)
+ VALUES ('10B', 'Leak Repair');
+
 
 
 INSERT INTO shift (shift_id, start_time, end_time) 
