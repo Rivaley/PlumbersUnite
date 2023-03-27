@@ -22,7 +22,7 @@ public class shiftBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert shift database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Select * from shift where shift_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -41,7 +41,7 @@ public class shiftBusinessObject {
         endTime=Et;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert shift database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Insert into shift values('"+getid()+"','"+getstartTime()+"','"+getendTime()+"')";
             System.out.println(sql);
@@ -58,7 +58,7 @@ public class shiftBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert shift database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Delete from shift where shift_id='"+getid()+"'";
             System.out.println(sql);
@@ -75,7 +75,7 @@ public class shiftBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert shift database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Update shift set start_time='"+getstartTime()+"',"+" end_time='"+getendTime()+"',"+" where shift_id='"+getid()+"'";
             System.out.println(sql);
