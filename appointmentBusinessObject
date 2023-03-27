@@ -31,7 +31,7 @@ public class appointmentBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert appointment database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Select * from appointment where appt_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -56,7 +56,7 @@ public class appointmentBusinessObject {
         time=t;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert appointment database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Insert into appointment values('"+getid()+"','"+getemployeeId()+"','"+getcustomerId()+"','"+getserviceId()+"','"+getdate()+"','"+gettime()+"')";
             System.out.println(sql);
@@ -73,7 +73,7 @@ public class appointmentBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert appointment database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Delete from appointment where appt_id='"+getid()+"'";
             System.out.println(sql);
@@ -90,7 +90,7 @@ public class appointmentBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert appointment database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Update appointment set employee_id='"+getemployeeId()+"',"+" customer_id='"+getcustomerId()+"',"+" service_id='"+getserviceId()+"',"+" appt_date='"+getdate()+"',"+" appt_time='"+gettime()+"',"+" where appt_id='"+getid()+"'";
             System.out.println(sql);
