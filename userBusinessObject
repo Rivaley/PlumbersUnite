@@ -20,7 +20,7 @@ public class userBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert user database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Select * from users where user_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -39,7 +39,7 @@ public class userBusinessObject {
         pass=p;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert user database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Insert into users values('"+getid()+"','"+getname()+"','"+getpass()+"')";
             System.out.println(sql);
@@ -56,7 +56,7 @@ public class userBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert user database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Delete from users where user_id='"+getid()+"'";
             System.out.println(sql);
@@ -73,7 +73,7 @@ public class userBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert user database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Update users set username='"+getname()+"',"+" user_pass='"+getpass()+"',"+" where user_id='"+getid()+"'";
             System.out.println(sql);
