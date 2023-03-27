@@ -20,7 +20,7 @@ public class scheduleBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert schedule database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Select * from schedule where schedule_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -39,7 +39,7 @@ public class scheduleBusinessObject {
         shiftId=Si;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert schedule database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Insert into schedule values('"+getid()+"','"+getdayOfWeek()+"','"+getshiftId()+"')";
             System.out.println(sql);
@@ -56,7 +56,7 @@ public class scheduleBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert schedule database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Delete from schedule where schedule_id='"+getid()+"'";
             System.out.println(sql);
@@ -73,7 +73,7 @@ public class scheduleBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert schedule database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Update schedule set day_of_week='"+getdayOfWeek()+"',"+" shift_id='"+getshiftId()+"',"+" where schedule_id='"+getid()+"'";
             System.out.println(sql);
