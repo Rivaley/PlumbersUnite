@@ -29,7 +29,7 @@ public class addressBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + ""jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb"");
             Statement stmt = c1.createStatement();
             String sql = "Select * from address where add_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -54,7 +54,7 @@ public class addressBusinessObject {
         zip=Z;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + ""jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb"");
             Statement stmt = c1.createStatement();
             String sql = "Insert into address values('"+getid()+"','"+getaddress1()+"','"+getaddress2()+"','"+getcity()+"','"+getstate()+"','"+getzip()+"')";
             System.out.println(sql);
@@ -71,7 +71,7 @@ public class addressBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + ""jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb"");
             Statement stmt = c1.createStatement();
             String sql = "Delete from Employees where add_id='"+getid()+"'";
             System.out.println(sql);
@@ -88,7 +88,7 @@ public class addressBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert employee database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + ""jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb"");
             Statement stmt = c1.createStatement();
             String sql = "Update Employees set address1='"+getaddress1()+"',"+" address2='"+getaddress2()+"',"+" add_city='"+getcity()+"',"+" add_state='"+getstate()+"',"+" add_zip='"+getzip()+" where add_id='"+getid()+"'";
             System.out.println(sql);
