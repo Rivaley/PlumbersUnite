@@ -17,7 +17,7 @@ public class serviceBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert service database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Select * from service where service_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -34,7 +34,7 @@ public class serviceBusinessObject {
         name=n;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert service database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Insert into service values('"+getid()+"','"+getname()+"')";
             System.out.println(sql);
@@ -51,7 +51,7 @@ public class serviceBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert service database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Delete from service where service_id='"+getid()+"'";
             System.out.println(sql);
@@ -68,7 +68,7 @@ public class serviceBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess://" + "(Insert service database link in here!)");
+            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Update service set service_name='"+getname()+" where service_id='"+getid()+"'";
             System.out.println(sql);
