@@ -1,34 +1,42 @@
 html{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+
 }
+
 
 body{
 
   height: auto;
-  width: 50%;
+  background-color: #ffffff;
   margin: 0 auto;
   text-align: center;
 }
-#customer_login {
-  background-color: white;
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  border: solid gray;
-  padding: 25px;
+
+.servicehead{
+  color:rgb(77, 143, 169);
+  font-family: 'Montserrat', sans-serif;
+  background-color:;
 }
 
-#admin_login {
-  background-color: white;
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  border: solid gray;
-  padding: 25px;
+section{
+  background-color:#ffffff;
+  font-family: 'Montserrat', sans-serif;
 }
 
-input{
-  padding: 5px;
-  width:50%;
-  margin: 5px;
+#schedulepanel{
+  background-color: rgb(221, 239, 243);
+  padding: 8rem;
+  
+  border-radius: 4rem;
+
+}
+
+#service_banner{
+  background-image: url("img/schedule_banner.png");
+  width:10rem;
+  height:auto;
+}
+
+.navi {
+  font-family: 'Montserrat', sans-serif;
 }
