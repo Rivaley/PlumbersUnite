@@ -3,21 +3,21 @@ package com.example.plumbersunite;
 import java.sql.*;
 
 public class addressBusinessObject {
-    private String id;
+    private int id;
     private String address1;
     private String address2;
     private String city;
     private String state;
-    private String zip;
+    private int zip;
     public addressBusinessObject() {
-        id="";
+        id=0;
         address1="";
         address2="";
         city="";
         state="";
-        zip="";
+        zip=0;
     }
-    public addressBusinessObject(String Aid, String A1, String A2, String C, String S, String Z) {
+    public addressBusinessObject(int Aid, String A1, String A2, String C, String S, int Z) {
         id=Aid;
         address1=A1;
         address2=A2;
@@ -25,7 +25,7 @@ public class addressBusinessObject {
         state=S;
         zip=Z;
     }
-    public void selectDB(String i) {
+    public void selectDB(int i) {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -39,13 +39,13 @@ public class addressBusinessObject {
             address2 = rs.getString(3);
             city = rs.getString(4);
             state = rs.getString(5);
-            zip = rs.getString(6);
+            zip = rs.getInt(6);
             c1.close();
         } catch(Exception e) {
             System.out.println(e);
         }
     }
-    public void insertDB(String Aid, String A1, String A2, String C, String S, String Z) {
+    public void insertDB(int Aid, String A1, String A2, String C, String S, int Z) {
         id=Aid;
         address1=A1;
         address2=A2;
@@ -90,7 +90,7 @@ public class addressBusinessObject {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
             Statement stmt = c1.createStatement();
-            String sql = "Update Employees set address1='"+getaddress1()+"',"+" address2='"+getaddress2()+"',"+" add_city='"+getcity()+"',"+" add_state='"+getstate()+"',"+" add_zip='"+getzip()+" where add_id='"+getid()+"'";
+            String sql = "Update Employees set add_1='"+getaddress1()+"',"+" add_2='"+getaddress2()+"',"+" add_city='"+getcity()+"',"+" add_state='"+getstate()+"',"+" add_zip='"+getzip()+" where add_id='"+getid()+"'";
             System.out.println(sql);
             int n =stmt.executeUpdate(sql);
             if (n==1)
@@ -103,8 +103,8 @@ public class addressBusinessObject {
         }
     }
     
-    public String getid() {return id;}
-    public void setid(String Aid) {id=Aid;}
+    public int getid() {return id;}
+    public void setid(int Aid) {id=Aid;}
     
     public String getaddress1() {return address1;}
     public void setaddress1(String A1) {address1=A1;}
@@ -118,8 +118,8 @@ public class addressBusinessObject {
     public String getstate() {return state;}
     public void setstate(String S) {state=S;}
     
-    public String getzip() {return zip;}
-    public void setzip(String Z) {zip=Z;}
+    public int getzip() {return zip;}
+    public void setzip(int Z) {zip=Z;}
     
     public void display() {
         System.out.println("Id: " + id);
