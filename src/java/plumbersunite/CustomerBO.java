@@ -98,6 +98,25 @@ public class CustomerBO {
         }
 
     }
+     public void UpdateDB(){
+        try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn=DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/plumbersdb.accdb");
+            Statement stmt=conn.createStatement();
+            String sql="Update customers set customer_id='"+getCustomer_ID()+"',"+"customer_fname='"+getCust_FirstName()+"',"+"customer_lname='"+getCust_LastName()+"',"+"customer_phone='"+getCust_Phone()+"',"+"customer_email='"+getCust_Email()+"'";
+            System.out.println(sql);
+            int n=stmt.executeUpdate(sql);
+            if (n==1){
+                System.out.println("Update Successful");
+            }else {
+                System.out.println("Update Failed");
+                conn.close();
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+    }
     public void setCustomer_ID(int cust_id){
         Customer_ID=cust_id;
     }
