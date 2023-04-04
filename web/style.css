@@ -26,8 +26,9 @@ section{
 #schedulepanel{
   background-color: rgb(221, 239, 243);
   padding: 8rem;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4rem; 
   
-  border-radius: 4rem;
 
 }
 
@@ -37,6 +38,9 @@ section{
   height:auto;
 }
 
-.navi {
-  font-family: 'Montserrat', sans-serif;
+input{
+  margin: .5rem;
 }
+
+
+

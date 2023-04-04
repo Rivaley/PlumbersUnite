@@ -3,21 +3,66 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Customer Login</title>
   </head>
   <body>
-    <div id=customer_login>
+
+    <!-- nav start -->
+    <nav class = "navbar navbar-expand-lg navbar-light" id="navi"> 
+      <div class = "container">
+      <a href="#" class="navbar-brand"><div class="container" style="width:12rem;"><img src="img/logo.png" class="img-fluid"></div></a>
+
+      <button class="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> 
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+
+      <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item" id="navmenu">
+              <a href="schedule_service.html" class="nav-link m-3"><img src="img/schedule.png" height="25rem"><br>Schedule a Call</a>
+              </li>
+
+              <li class="nav-item">
+                  <a href="#" class="nav-link m-3"><img src="img/contact.png" height="25rem"><br>Contact</a>
+                  </li>
+
+              <li class="nav-item m-3">
+                  <a href="customer_login.html" class="nav-link"><img src="img/account.png" height="25rem"><br>Log In</a>
+                  </li>
+                  <li class="nav-item m-3">
+                      <a href="shopping_cart.html" class="nav-link"><img src="img/cart.png" height="25rem"><br>Cart</a>
+                      </li>
+          </ul>
+      </div>
+  </div>
+  </nav>
+
+  <!-- nav end -->
+
+
+    <div class ="d-flex container w-50" id="schedulepanel" style="margin-top: 8rem;">
       <h1>Login to your account </h1>
-      <form method="post" action="">
+      <form method="post" action="add login php here!!!">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username">
       <br>
-      <label for="password">Password:</label>
+      <label for="password" style="margin-top: 1rem;">Password:</label>
       <input type="text" id="password" name="password">
       <br>
 
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" style="margin-top: 1rem;" id="customer_login">
       </form>
 
+    </div> 
+
+    <div class ="container text-center">
+      <h5 style="margin-top:2rem; font-family: 'Montserrat', sans-serif;">Don't have an account? Why don't you make one!</h5>
+      <a href="customer_addaccount.html" style="font-family: 'Montserrat', sans-serif;"> Click here to create an account</a>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
