@@ -66,7 +66,7 @@ public class CustomerBO {
         Cust_AddressID=cust_add;
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection conn=DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/plumbersdb.accdb");
+            Connection conn=DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/Downloads/plumbers_db.accdb");
             Statement stmt=conn.createStatement();
             String sql="INSERT INTO customers values ('\"+getCustomer_ID()+\"','\"+getCust_FirstName()+\"','\"+getCust_LastName()+\"','\"+getCust_Phone()+\"','\"+getCust_Email()+\"','\"+getCust_AddressID()+\"'";
             System.out.println(sql);
