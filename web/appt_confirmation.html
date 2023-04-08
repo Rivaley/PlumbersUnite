@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+    <title>Appointment Confirmation</title>
+</head>
+
+<body>
+<!-- nav bar start-->
+    <nav class = "navbar navbar-expand-lg navbar-light" id="navi"> 
+        <div class = "container">
+        <a href="#" class="navbar-brand"><div class="container" style="width:12rem;"><img src="img/logo.png" class="img-fluid"></div></a>
+
+        <button class="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> 
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" id="navmenu">
+                <a href="schedule_service.html" class="nav-link m-3"><img src="img/schedule.png" height="25rem"><br>Schedule a Call</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-3"><img src="img/contact.png" height="25rem"><br>Contact</a>
+                    </li>
+
+                <li class="nav-item m-3">
+                    <a href="customer_login.html" class="nav-link"><img src="img/account.png" height="25rem"><br>Log In</a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a href="shopping_cart.html" class="nav-link"><img src="img/cart.png" height="25rem"><br>Cart</a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+<!-- nav bar end-->
+
+
+    <div class="container p-5" style="margin-top: 8rem;" id="schedulepanel">
+        <h1>Thank you for trusting us! Your service call has been placed.</h1>
+        <p>Your service call details are below</p>
+
+        <div class="container mt-5 w-50 p-5" style="background-color: aliceblue;">
+            <div class="d-flex grid gap-3">
+                <div class= "col m-5" id=appt_info">
+                    <h4>Appointment</h4>
+                    <p>Date:</p><span><!--appointment variable--></span>
+                    <p>Timeframe:</p><span><!--appointment variable--></span>
+                    <p>Service</p><span><!--appointment variable--></span>
+                </div>
+                <div class ="col m-5" id="contact_info">
+                    <h4>Contact Info</h4>
+                    <p>Name:</p><span><!--customer variable--></span>
+                    <p>Address:</p><span><!--address variables--></span>
+                    <p>Phone:</p><span><!--customer variable--></span>
+                </div>
+            </div>
+
+            <div id="details">
+                <p>Details:</p>
+                <p>Water is everywhere! Please call before you arrive.</p>
+            </div>
+
+            <div>
+                <p>Appointment &#35;<span><!--appointment number variable--></span> </p>
+            </div>
+        </div>
+        <div class="container w-75 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary m-5" id="btn_managejob">Manage
+                Jobs</button>
+            <button type="submit" class="btn btn-primary m-5" id="btn_managesched">Manage
+                Schedule</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
