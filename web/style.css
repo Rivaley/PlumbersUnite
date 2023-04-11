@@ -42,5 +42,20 @@ input{
   margin: .5rem;
 }
 
+h1{
+  font-family: 'Montserrat', sans-serif;
 
+}
+
+h2{
+  font-family: 'Montserrat', sans-serif;
+  color:navy;
+}
+
+#admin_login{
+  border: solid gray 1px;
+  border-radius: 1rem;
+  width:50%;
+ 
+}
 
