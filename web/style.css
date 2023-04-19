@@ -15,7 +15,7 @@ body{
 .servicehead{
   color:rgb(77, 143, 169);
   font-family: 'Montserrat', sans-serif;
-  background-color:;
+  background-color: #ffffff;
 }
 
 section{
@@ -58,4 +58,3 @@ h2{
   width:50%;
  
 }
-
