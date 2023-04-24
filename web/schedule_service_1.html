@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+    <title>Schedule a Service Call</title>
+  </head>
+  <body>
+
+<!-- Nav Bar -->
+    <nav class = "navbar navbar-expand-lg navbar-light" id="navi"> 
+        <div class = "container">
+        <a href="#" class="navbar-brand"><div class="container" style="width:12rem;"><img src="img/logo.png" class="img-fluid"></div></a>
+
+        <button class="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> 
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" id="navmenu">
+                <a href="schedule_service.html" class="nav-link m-3"><img src="img/schedule.png" height="25rem"><br>Schedule a Call</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-3"><img src="img/contact.png" height="25rem"><br>Contact</a>
+                    </li>
+
+                <li class="nav-item m-3">
+                    <a href="customer_login.html" class="nav-link"><img src="img/account.png" height="25rem"><br>Log In</a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a href="shopping_cart.html" class="nav-link"><img src="img/cart.png" height="25rem"><br>Cart</a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+
+<!-- Schedule Form -->
+
+<section class="p-5 m-5 text-center w-90">
+ <div class = "container w-100"> <!-- main container for scheduling form-->
+
+    <h1>Schedule a Service</h1>
+    <!--<div id="service_banner"><img src="img/schedule_banner.png" width="1295rem;"> </div> -->
+    <form method="post" action="http://localhost:8080/PlumbersUnite/createAppointment">
+
+<div class = container id =schedulepanel>
+     <h4 class="servicehead">Create Account Before Scheduling Appointment</h4> 
+        <div class="row m-5"> 
+            <div class="form-group col-lg-3">
+                <label for="f_name">Username:</label>
+                <input type="text" class="form-control" placeholder="Username" id="f_name" name="username">
+            </div>
+<!--            <div class="form-group col-lg-6">
+                <label for="l_name">Last Name:</label>
+                <input type="text" class="form-control" placeholder="Last Name" id="l_name">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="address_1">Street Name:</label>
+                <input type="text" class="form-control" placeholder="Street Address" id="address_1">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="address_2">Address 2:</label>
+                <input type="text" class="form-control" placeholder="Suite or Apt #" id="address_2">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" placeholder="City" id="city">
+            </div>
+            <div class="form-group col-lg-4">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" placeholder="State" id="state">
+            </div>
+            <div class="form-group col-lg-2">
+                <label for="zip">Zip Code:</label>
+                <input type="text" class="form-control" placeholder="Zip" id="zip">
+            </div>
+            <div class="form-group col-lg-4">
+                <label for="phone">Phone:</label>
+                <input type="phone" class="form-control" placeholder="Phone Number" id="phone">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Email" id="email">
+            </div>
+            -->
+                
+        </div>
+    </div>
+
+
+
+
+
+
+
+<div class="container" style="margin-top: 4rem;">
+<div class="container" id="schedulepanel">
+ <h4 class="servicehead" style="margin-bottom:4rem;">Choose Your Services</h4>
+    <div class="accordion" id="services_accordian">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         <h4> Repair Services</h4>
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#services_accordian">
+        <div class="accordion-body d-flex flex-wrap justify-content-center">
+
+
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/leaks.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Leaks</h5>
+                  <p class="card-text">A technician will come out to assess your water leak - This is a mandatory service 
+                    required of all services (not including Routine Services) before parts are 
+                    ordered, or repairs are completed.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="leaks" name="service_choice" value="leaks">
+                </div>
+              </div>
+
+            <!-- start cards -->
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/toilet_repair.png" class="card-img-top" alt="..." height="237rem">
+                <div class="card-body">
+                  <h5 class="card-title">Toilet Repair</h5>
+                  <p class="card-text">A technician will come out to repair your toilet and assess any water damage caused by the incident.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="toilet_repair" name="service_choice" value="toilet_repair">
+                </div>
+              </div>
+              <!-- end cards -->
+
+            <!-- start cards -->
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/garbage-repair.jpg" class="card-img-top" alt="..." height="237rem">
+                <div class="card-body">
+                  <h5 class="card-title">Garbage Disposal Repair</h5>
+                  <p class="card-text">A technician will come out to assess your garbage disposal and repair any damage.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="garbage_repair" name="service_choice" value="garbage_repair">
+                </div>
+              </div>
+              <!-- end cards -->
+
+                <!-- start cards -->
+                <div class="card" style="width: 15rem; margin: 20px;">
+                    <img src="img/tub-repair.jpg" class="card-img-top" alt="..." height="237rem">
+                    <div class="card-body">
+                      <h5 class="card-title">Tub Repair</h5>
+                      <p class="card-text">A technician will come out to assess your tub and repair any damage. This includes any chipping, resurfacing, leaking, or drain clogs.</p>
+                      <h6>Select Service</h6><input type="checkbox" id="tub_repair" name="service_choice" value="tub_repair">
+                    </div>
+                  </div>
+                  <!-- end cards -->  
+                  
+                  
+                <!-- start cards -->
+                <div class="card" style="width: 15rem; margin: 20px;">
+                    <img src="img/shower-repair.jpg" class="card-img-top" alt="..." height="237rem">
+                    <div class="card-body">
+                      <h5 class="card-title">Shower Repair</h5>
+                      <p class="card-text">A technician will come out to assess your shower and repair any damage. This includes any chipping, resurfacing, leaking, or drain clogs.</p>
+                      <h6>Select Service</h6><input type="checkbox" id="shower_repair" name="service_choice" value="shower_repair">
+                    </div>
+                  </div>
+                  <!-- end cards -->   
+
+                <!-- start cards -->
+                <div class="card" style="width: 15rem; margin: 20px;">
+                    <img src="img/faucet_repair.jpg" class="card-img-top" alt="..." height="237rem">
+                    <div class="card-body">
+                      <h5 class="card-title">Faucet Repair</h5>
+                      <p class="card-text">A technician will come out to assess your faucet and repair any damage. This includes any leaking, or drain clogs. Will install a new faucet if necessary.</p>
+                      <h6>Select Service</h6><input type="checkbox" id="faucet_repair" name="service_choice" value="faucet_repair">
+                    </div>
+                  </div>
+                  <!-- end cards -->  
+
+                <!-- start cards -->
+                <div class="card" style="width: 15rem; margin: 20px;">
+                    <img src="img/waterheater-repair.jpg" class="card-img-top" alt="..." height="237rem">
+                    <div class="card-body">
+                      <h5 class="card-title">Water Heater Repair</h5>
+                      <p class="card-text">A technician will come out to assess your water heater and repair any damage. This includes any leaking, water damage assesment, and more.</p>
+                      <h6>Select Service</h6><input type="checkbox" id="waterheater_repair" name="service_choice" value="waterheater_repair">
+                    </div>
+                  </div>
+                  <!-- end cards -->  
+        
+
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <h4>Install Services </h4>
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#services_accordian">
+        <div class="accordion-body d-flex flex-wrap justify-content-center">
+          <!-- start cards -->
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/tub-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tub Install</h5>
+                  <p class="card-text">A technician will come out to install your new tub.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="tub-install" name="service_choice" value="tub-install">
+                </div>
+              </div>
+              <!-- end cards -->
+
+            <!-- start cards -->
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/shower_install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Shower Install</h5>
+                  <p class="card-text">A technician will come out install your new shower.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="shower-install" name="service_choice" value="shower-install">
+                </div>
+              </div>
+              <!-- end cards -->
+
+            <!-- start cards -->
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/tubnshower-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tub & Shower Install</h5>
+                  <p class="card-text">A technician will come out install your new shower and tub combo.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="tubnshower-install" name="service_choice" value="tubnshower-install">
+                </div>
+              </div>
+              <!-- end cards -->
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/sink-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Sink Install</h5>
+                  <p class="card-text">A technician will come out install your new sink.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="sink-install" name="service_choice" value="sink-install">
+                </div>
+              </div>
+              <!-- end cards -->              
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/faucet-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Faucet Install</h5>
+                  <p class="card-text">A technician will come out install your new faucet.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="faucet-install" name="service_choice value="faucet-install">
+                </div>
+              </div>
+              <!-- end cards -->
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/toilet-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Toilet Install</h5>
+                  <p class="card-text">A technician will come out install your new commode.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="toilet-install" name="service_choice" value="toilet-install">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/garbage-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Garbage Disposal Install</h5>
+                  <p class="card-text">A technician will come out install your new garbage disposal.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="garbage-install" name="service_choice" value="garbage-install">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/waterheater-install.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Water Heater Install</h5>
+                  <p class="card-text">A technician will come out install your new water heater.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="garbage-install" name="service_choice" value="Water Heater Installation">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <h4>Maintenance Services</h4>
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#services_accordian">     
+        <div class="accordion-body d-flex flex-wrap justify-content-center">
+
+
+
+            <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/routine-services.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Routine Services</h5>
+                  <p class="card-text">A technician will come out to assess your current infrastructure and perform general routine services.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="routine" name="service_choice" value="routine">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/drain-cleaning.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Drain Cleaning Services</h5>
+                  <p class="card-text">A technician will come out to assess your drains and clean them thorougly. Recommended at least every 6 months.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="drain-cleaning" name="service_choice" value="drain-cleaning">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/diagnostics.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Diagnostics</h5>
+                  <p class="card-text">A technician will come out to assess your plumbing infrastructure. They will make suggestions and set up a plan tailored to your needs.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="diagnostics" name="service_choice" value="diagnostics">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+
+              <div class="card" style="width: 15rem; margin: 20px;">
+                <img src="img/re_piping.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Re-Piping</h5>
+                  <p class="card-text">A technician will come out and run new piping for your plumbing infrastructure.</p>
+                  <h6>Select Service</h6><input type="checkbox" id="repiping" name="service_choice" value="repiping">
+                </div>
+              </div>
+              <!-- end cards --> 
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mb-3 row w-90 text-center m-5">
+<h2>Schedule Your Service Call </h2>
+<label for="date" style="margin-bottom: 20px; margin-top: 20px;"><h4 class="servicehead">Select a date:</h4></label>
+
+<div class="container w-50">
+<input type="date" id="date" name="date">
+<br>
+<label for="timeframe" style="margin-bottom: 20px; margin-top: 20px;"><h4 class="servicehead">Select a timeframe:</h4></label><br>
+<select id="timeframe" name="timeframe">
+    <option name="time">Choose Time</option>
+    <option name="time" value="early_morning">Early Morning  | 8am - 10am</option>
+    <option name="time" value="late_morning">Late Morning | 10am - 1pm </option>
+    <option name="time" value="afternoon">Afternoon | 1pm - 4pm</option>
+    <option name="time" value="evening">Evening | 5pm - 8pm</option>
+    </select>
+<br>  
+<button type="submit" class="btn btn-primary mb-3 mt-5 w-75">Schedule Appointment</button>
+</div>
+<br>
+
+
+    
+
+</form>
+</div>
+</div>
+
+ </div> <!-- main container for scheduling form end -->
+</section>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>
+

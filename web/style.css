@@ -10,12 +10,13 @@ body{
   background-color: #ffffff;
   margin: 0 auto;
   text-align: center;
+
 }
 
 .servicehead{
   color:rgb(77, 143, 169);
   font-family: 'Montserrat', sans-serif;
-  background-color: #ffffff;
+  background-color:;
 }
 
 section{
@@ -53,8 +54,42 @@ h2{
 }
 
 #admin_login{
-  border: solid gray 1px;
+  border: solid navy 4px;
   border-radius: 1rem;
   width:50%;
+  background-color: #ffffff;
  
 }
+
+.admin_main{
+  background-image: url("img/admin_bg.jpeg");
+  height: 70rem;
+  padding: 30px;
+}
+
+#scheduled_jobs{
+  border: solid 4px rgb(140, 230, 190);
+  border-radius: 2rem;
+  padding: 50px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+}
+
+#open_jobs{
+  border: solid 4px rgb(235, 162, 162);
+  border-radius: 2rem;
+  padding:50px;
+
+}
+
+#dashboard_panel{
+  background-color: rgb(183, 234, 234);
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  padding:50px;
+  border-radius: 2rem;
+}
+
+
