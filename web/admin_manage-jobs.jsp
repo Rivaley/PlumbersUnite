@@ -60,7 +60,7 @@
 <div class="container">
           <%
           try {
-          connection = DriverManager.getConnection("jdbc:mysql:/localhost:3306/plumbers_db.accdb", "root", "");
+          connection = DriverManager.getConnection("https://github.com/Rivaley/PlumbersUnite/raw/main/src/plumbers_db.accdb", "root", "");
           statement = connection.createStatement();
           String service_name = null;
           %>
@@ -106,7 +106,7 @@
           <td id="job_plumber" style="vertical-align: middle;">
             <select class="form-control">
                 <%
-                    Connection con = DriverManager.getConnection("jdbc:mysql:/localhost:3306/plumbers_db.accdb", "root", "");
+                    Connection con = DriverManager.getConnection("https://github.com/Rivaley/PlumbersUnite/raw/main/src/plumbers_db.accdb", "root", "");
                     Statement stmt = connection.createStatement();
                     String sql2 = "Select emp_username from appointment";
                     ResultSet rs = stmt.executeQuery(sql2);
