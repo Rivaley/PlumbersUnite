@@ -5,15 +5,15 @@ import java.sql.*;
 public class scheduleBusinessObject {
     private int id;
     private String dayOfWeek;
-    private Timestamp shiftStart;
-    private Timestamp shiftEnd;
+    private String shiftStart;
+    private String shiftEnd;
     public scheduleBusinessObject() {
         id=0;
         dayOfWeek="";
-        shiftStart=new Timestamp(shiftStart.getTime());
-        shiftEnd=new Timestamp(shiftEnd.getTime());
+        shiftStart="";
+        shiftEnd="";
     }
-    public scheduleBusinessObject(int i, String dow, Timestamp SS, Timestamp SE) {
+    public scheduleBusinessObject(int i, String dow, String SS, String SE) {
         id=i;
         dayOfWeek=dow;
         shiftStart=SS;
@@ -30,14 +30,14 @@ public class scheduleBusinessObject {
             System.out.println(sql);
             rs.next();
             dayOfWeek = rs.getString(2);
-            shiftStart = rs.getTimestamp(3);
-            shiftEnd = rs.getTimestamp(4);
+            shiftStart = rs.getString(3);
+            shiftEnd = rs.getString(4);
             c1.close();
         } catch(Exception e) {
             System.out.println(e);
         }
     }
-    public void insertDB(int i, String dow, Timestamp SS, Timestamp SE) {
+    public void insertDB(int i, String dow, String SS, String SE) {
         id=i;
         dayOfWeek=dow;
         shiftStart=SS;
@@ -99,11 +99,11 @@ public class scheduleBusinessObject {
     public String getdayOfWeek() {return dayOfWeek;}
     public void setdayOfWeek(String dow) {dayOfWeek=dow;}
     
-    public Timestamp getshiftStart() {return shiftStart;}
-    public void setshiftStart(Timestamp SS) {shiftStart=SS;}
+    public String getshiftStart() {return shiftStart;}
+    public void setshiftStart(String SS) {shiftStart=SS;}
     
-    public Timestamp getshiftEnd() {return shiftEnd;}
-    public void setshiftEnd(Timestamp SE) {shiftEnd=SE;}
+    public String getshiftEnd() {return shiftEnd;}
+    public void setshiftEnd(String SE) {shiftEnd=SE;}
     
     public void display() {
         System.out.println("Id: " + id);
