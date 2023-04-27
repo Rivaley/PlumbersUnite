@@ -9,19 +9,19 @@ public class appointmentBusinessObject {
     private String empUsername;
     private String custUsername;
     private String serviceName;
-    private Date date;
-    private Timestamp start;
-    private Timestamp end;
+    private String date;
+    private String start;
+    private String end;
     public appointmentBusinessObject() {
         id=0;
         empUsername="";
         custUsername="";
         serviceName="";
-        date=new Date(date.getTime());
-        start=new Timestamp(start.getTime());
-        end=new Timestamp(end.getTime());
+        date="";
+        start="";
+        end="";
     }
-    public appointmentBusinessObject(int Aid, String EU, String CU, String SN, Date d, Timestamp s, Timestamp e) {
+    public appointmentBusinessObject(int Aid, String EU, String CU, String SN, String d, String s, String e) {
         id=Aid;
         empUsername=EU;
         custUsername=CU;
@@ -34,7 +34,7 @@ public class appointmentBusinessObject {
         id=i;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
+            Connection c1 = DriverManager.getConnection("https://github.com/Rivaley/PlumbersUnite/raw/main/src/plumbers_db.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Select * from appointment where appt_id = '"+getid()+"'";
             ResultSet rs = stmt.executeQuery(sql);
@@ -43,15 +43,15 @@ public class appointmentBusinessObject {
             empUsername = rs.getString(2);
             custUsername = rs.getString(3);
             serviceName = rs.getString(4);
-            date = rs.getDate(5);
-            start = rs.getTimestamp(6);
-            end = rs.getTimestamp(7);
+            date = rs.getString(5);
+            start = rs.getString(6);
+            end = rs.getString(7);
             c1.close();
         } catch(Exception ex) {
             System.out.println(ex);
         }
     }
-    public void insertDB(int Aid, String EU, String CU, String SN, Date d, Timestamp s, Timestamp e) {
+    public void insertDB(int Aid, String EU, String CU, String SN, String d, String s, String e) {
         id=Aid;
         empUsername=EU;
         custUsername=CU;
@@ -61,7 +61,7 @@ public class appointmentBusinessObject {
         end=e;
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
+            Connection c1 = DriverManager.getConnection("https://github.com/Rivaley/PlumbersUnite/raw/main/src/plumbers_db.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Insert into appointment values('"+getid()+"','"+getempUsername()+"','"+getcustUsername()+"','"+getserviceName()+"','"+getdate()+"','"+getstart()+"','"+getend()+"')";
             System.out.println(sql);
@@ -78,7 +78,7 @@ public class appointmentBusinessObject {
     public void deleteDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
+            Connection c1 = DriverManager.getConnection("https://github.com/Rivaley/PlumbersUnite/raw/main/src/plumbers_db.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Delete from appointment where appt_id='"+getid()+"'";
             System.out.println(sql);
@@ -95,7 +95,7 @@ public class appointmentBusinessObject {
     public void updateDB() {
         try{
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection c1 = DriverManager.getConnection("jdbc:ucanaccess:/C:/Users/Ndure/PlumbersUDatabase1.accdb");
+            Connection c1 = DriverManager.getConnection("https://github.com/Rivaley/PlumbersUnite/raw/main/src/plumbers_db.accdb");
             Statement stmt = c1.createStatement();
             String sql = "Update appointment set emp_username='"+getempUsername()+"',"+" cust_username='"+getcustUsername()+"',"+" service_name='"+getserviceName()+"',"+" appt_date='"+getdate()+"',"+" appt_start='"+getstart()+"',"+" appt_end='"+getend()+"',"+" where appt_id='"+getid()+"'";
             System.out.println(sql);
@@ -122,14 +122,14 @@ public class appointmentBusinessObject {
     public String getserviceName() {return serviceName;}
     public void setserviceName(String SN) {serviceName=SN;}
     
-    public Date getdate() {return date;}
-    public void setdate(Date d) {date=d;}
+    public String getdate() {return date;}
+    public void setdate(String d) {date=d;}
     
-    public Timestamp getstart() {return start;}
-    public void setstart(Timestamp s) {start=s;}
+    public String getstart() {return start;}
+    public void setstart(String s) {start=s;}
     
-    public Timestamp getend() {return end;}
-    public void setend(Timestamp e) {end=e;}
+    public String getend() {return end;}
+    public void setend(String e) {end=e;}
     
     public void display() {
         System.out.println("Id: " + id);
